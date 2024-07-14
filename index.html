@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Widgets</title>
+    <link rel="shortcut icon" href="#" />
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <link href='https://fonts.googleapis.com/css?family=Inter' rel='stylesheet'>
+</head>
+<body>
+    <div class="container">
+        <div class="top-box">
+            <div class="small-box" id="ent">
+                <div class="side" id="ent-preferences">
+                    <button class="ent-button" onclick="preferences()">
+                        <ion-icon name="musical-notes-outline"></ion-icon>
+                    </button>
+                    <div class="ent-top">Preferences</div>
+                    <div class="ent-center" id="ent-select">                    
+                        <input type="hidden" id='hidden_token'>
+                        <select multiple id="genre-select">
+                            <option value="classical">Classical</option>
+                            <option value="jazz">Jazz</option>
+                            <option value="rock">Rock</option>
+                            <option value="pop">Pop</option>
+                            <option value="hip-hop">Hip Hop</option>
+                            <option value="r-n-b">R&B</option>
+                            <option value="edm">EDM</option>
+                            <option value="country">Country</option>
+                            <option value="reggae">Reggae</option>
+                            <option value="blues">Blues</option>
+                            <option value="folk">Folk</option>
+                            <option value="world-music">World</option>
+                            <option value="metal">Metal</option>
+                            <option value="punk">Punk</option>
+                            <option value="gospel">Gospel</option>
+                            <option value="alternative">Alternative</option>
+                        </select></div>
+                    <div class="ent-bottom" id="ent-save">
+                        <button onclick="preferences()">
+                            <ion-icon name="checkmark-sharp" id="ent-check"></ion-icon>
+                        </button>
+                    </div>
+                </div>
+                <div class="side" id="ent-cover">
+                    <button class="ent-button" onclick="placeholderbcwalangwifiugh()">
+                        <ion-icon name="settings-outline"></ion-icon>
+                    </button>
+                    <div class="ent-top" id="cover-title">
+                        Welcome.
+                    </div>
+                    <div class="ent-center">
+                        Click the gear icon to set your preferred genre/s.
+                        <img id="album-img" src=""></img>
+                    </div id="">
+                    <div class="ent-bottom" id="cover-button">
+                        <button onclick="reveal()">REVEAL</button>
+                    </div>
+                </div>
+                <div class="side" id="ent-info">
+                    <button class="ent-button" onclick="preferences()">
+                        <ion-icon name="settings-outline"></ion-icon>
+                    </button>
+                    <div class="ent-top">
+                        title
+                    </div>
+                    <div class="ent-center">
+                        artist
+                        album
+                        year
+                    </div>
+                    <div class="ent-bottom">
+                        <button class="info-button" onclick="flip()">
+                            <ion-icon name="chevron-back-sharp"></ion-icon>
+                        </button>
+                        <button class="info-button">
+                            <a href=""><ion-icon name="link-sharp"></ion-icon></a>
+                        </button>
+                        <button class="info-button" id="play-button">
+                            <ion-icon name="play"></ion-icon>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="small-box" id="prod">
+                <div id="prod-main">
+                    <div class="pie animate no-round">
+                        <div class="tasks-text">0<br>to-do</div>
+                    </div>
+                </div>
+                <div class="state" id="to-do">
+                    <div class="tasks-container">
+                    </div>
+                </div>
+                <div class="state" id="in-progress">
+                    <div class="tasks-container"></div>
+                </div>
+                <div class="state" id="done">
+                    <div class="tasks-container"></div>
+                </div>
+                <div class="bottom-elements">
+                    <button class="control delete">×</button>
+                    <div class="bottom-circles">
+                        <button class="circle red"></button>
+                        <button class="circle orange"></button>
+                        <button class="circle green"></button>
+                    </div>
+                    <button class="control add">+</button>
+                </div>
+            </div>
+        </div>
+        <div class="bottom-box" id ="edu">
+            <div id="edu-date-section">
+                <div class="text-scroll-wrapper" id="category-wrapper">
+                    <div class="text-scroll" id="edu-category">
+                        <div id="prev-category">category0</div>
+                        <div id="current-category">category1</div>
+                        <div id="next-category">category2</div>
+                    </div>
+                </div>
+                <div id="on-this-day">ON THIS DAY</div>
+                <div id="edu-date">[date]</div>
+                <div class="text-scroll-wrapper" id="year-wrapper">
+                    <div class="text-scroll" id="edu-year">
+                        <div id="prev-year">YEAR0</div>
+                        <div id="current-year">YEAR1</div>
+                        <div id="next-year">YEAR2</div>
+                    </div>
+                </div>
+            </div>
+            <div id="edu-content-section" data-mouse-down-at="0">
+                <div id="edu-prev-bg">
+                    <div id="edu-prev">
+                    </div>
+                </div>
+                <div id="edu-current-bg">
+                    <div id="edu-current">
+                    </div>
+                </div>
+                <div id='edu-next-bg'>
+                    <div id="edu-next">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="app.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</body>
+</html>
