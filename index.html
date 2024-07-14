@@ -12,9 +12,22 @@
     <div class="container">
         <div class="top-box">
             <div class="small-box" id="ent">
+                <div class="side" id="ent-welcome">
+                    <div class="ent-top">
+                        Welcome.
+                    </div>
+                    <div class="ent-center">
+                        <button onclick="preferences()" id="spin">
+                            <ion-icon name="settings-sharp"></ion-icon>
+                        </button>
+                    </div>
+                    <div class="ent-bottom">
+                        Click the gear icon to set your preferred genre/s.
+                    </div>
+                </div>
                 <div class="side" id="ent-preferences">
                     <button class="ent-button" onclick="preferences()">
-                        <ion-icon name="musical-notes-outline"></ion-icon>
+                        <ion-icon name="musical-notes"></ion-icon>
                     </button>
                     <div class="ent-top">Preferences</div>
                     <div class="ent-center" id="ent-select">                    
@@ -44,15 +57,15 @@
                     </div>
                 </div>
                 <div class="side" id="ent-cover">
-                    <button class="ent-button" onclick="placeholderbcwalangwifiugh()">
-                        <ion-icon name="settings-outline"></ion-icon>
+                    <button class="ent-button" onclick="preferences()">
+                        <ion-icon name="settings-sharp"></ion-icon>
                     </button>
-                    <div class="ent-top" id="cover-title">
-                        Welcome.
+                    <div class="ent-top">
+                        <div id="cover-title" data-track-name="">Today's Pick</div>
+                        <div id="cover-title-2"></div>
                     </div>
                     <div class="ent-center">
-                        Click the gear icon to set your preferred genre/s.
-                        <img id="album-img" src=""></img>
+                        <img id="album-img" src="" draggable="false"></img>
                     </div id="">
                     <div class="ent-bottom" id="cover-button">
                         <button onclick="reveal()">REVEAL</button>
@@ -60,14 +73,20 @@
                 </div>
                 <div class="side" id="ent-info">
                     <button class="ent-button" onclick="preferences()">
-                        <ion-icon name="settings-outline"></ion-icon>
+                        <ion-icon name="settings-sharp"></ion-icon>
                     </button>
-                    <div class="ent-top">
-                        title
+                    <div id="info-wrapper">
+                        <div class="info-title">
+                            <div id="info-title"></div><div class="scroll-div" id="title-2"></div>
+                        </div>
+                        <div class="artist">
+                            <div id="artist"></div><div class="scroll-div" id="artist-2"></div>
+                        </div>
+                        <div class="album-name">
+                            <div id="album-name"></div><div class="scroll-div" id="album-2"></div>
+                        </div>
                     </div>
-                    <div class="ent-center">
-                        artist
-                        album
+                    <div id="year">
                         year
                     </div>
                     <div class="ent-bottom">
@@ -75,7 +94,7 @@
                             <ion-icon name="chevron-back-sharp"></ion-icon>
                         </button>
                         <button class="info-button">
-                            <a href=""><ion-icon name="link-sharp"></ion-icon></a>
+                            <a href="" id="track-link"><ion-icon name="link-sharp"></ion-icon></a>
                         </button>
                         <button class="info-button" id="play-button">
                             <ion-icon name="play"></ion-icon>
