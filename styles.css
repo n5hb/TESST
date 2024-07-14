@@ -50,6 +50,7 @@ button {
     color: #2D1510;
     transform-style: preserve-3d;
     container-type: inline-size;
+    transition: transform 0.8s ease-in-out;
 }
 
 .ent-button {
@@ -59,11 +60,17 @@ button {
     z-index: 3;
     padding: 5%;
     line-height: 0;
-    font-size: 12cqi;
+    /* font-size: 12cqi; */
+    font-size: max(3.4vmin, 1rem);
     color: #2D1510;
-    background-color: #D9D0C5;
+    background-color: transparent;
     border-radius: 100%;
     border: none;
+    transition: all 0.2s ease;
+}
+
+.ent-button:hover {
+    transform: scale(1.1);
 }
 
 .side {
@@ -82,21 +89,17 @@ button {
 .ent-top,
 .ent-bottom {
     width: 100%;
-    font-size: 10cqi;
-    line-height: 0;
+    font-size: max(3.5vmin, 0.9rem);
+    /* font-size: 10cqi; */
+    line-height: 1;
     display: flex;
 }
 
 .ent-top {
-    height: 10%;
+    height: 12%;
     align-items: center;
     padding-bottom: 3%;
     font-weight: 700;
-}
-
-#ent-cover .ent-top {
-    font-weight: 500;
-    justify-content: center;
 }
 
 .ent-center {
@@ -104,19 +107,10 @@ button {
     aspect-ratio: 1/1;
 }
 
-.ent-center:has(#album-img) {
-    align-content: center;
-    overflow: hidden;
-    border-radius: 15%;
-}
-
-#album-img {
-    width: 100%;
-}
-
 .ent-bottom {
     height: 16%;
     padding-top: 7.5%;
+    line-height: 0;
     display: flex;
     justify-content: space-evenly;
     align-items: center;
@@ -127,35 +121,58 @@ button {
     background-color: transparent;
     border-radius: 20px;
     color: #2D1510;
-    border: 2.5px solid #2D1510;
+    border: max(0.4vmin, 0.1rem) solid #2D1510;
     line-height: 0;
-    font-size: 11.5cqi;
+    font-size: max(4vmin, 1rem);
+    /* font-size: 11.5cqi; */
     font-weight: 600;
     letter-spacing: -1px;
     font-style: italic;
 }
 
-#ent-preferences .ent-bottom button {
-    border-radius: 40px;
-    width: 60%;
-    background-color: #2D1510;
-    color: #D9D0C5;
+#ent-welcome .ent-center {
+    height: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.6s ease;
 }
 
-#ent-cover .ent-bottom button {
-    width: 90%;
+#ent-welcome .ent-center:hover {
+    transform: scale(1.1);
 }
 
-.info-button {
-    padding: 0;
-    aspect-ratio: 1/1;
-    font-size: 12cqi !important;
-    border-radius: 100px !important;
+#spin {
+    transition: transform 0.8s ease;
+    transform: rotate(0deg);
 }
 
-.info-button a {
+#ent-welcome .ent-center button {
+    line-height: 0;
+    font-size: max(17vmin, 4rem);
+    /* font-size: 40cqi; */
+    background-color: transparent;
+    border: none;
     color: #2D1510;
-    text-decoration: none;
+}
+
+#ent-welcome .ent-top {
+    padding: 0;
+}
+
+#ent-welcome .ent-top,
+#ent-cover .ent-top {
+    justify-content: center;
+    font-weight: 400;
+    font-style: italic;
+
+}
+
+#ent-welcome .ent-bottom {
+    text-align: center;
+    line-height: 1;
+    font-size: max(2.64vmin, 0.7rem);
+    /* font-size: 7.4cqi; */
 }
 
 #ent-preferences {
@@ -170,7 +187,8 @@ button {
     background-color: #D9D0C5;
     border: none;
     outline: none;
-    font-size: 8.5cqi;
+    font-size: max(3.3vmin, 0.7rem);
+    /* font-size: 8.5cqi; */
     scrollbar-color: #774E45 transparent;
     scrollbar-width: thin;
     scroll-behavior: smooth;
@@ -179,27 +197,205 @@ button {
 #ent-select select option {
     padding: 2px 15px;
     border-radius: 18px;
+    border: 2px solid transparent;
     color: #2D1510;
+    transition: all 0.2s ease;
 }
 
 #ent-preferences select option:hover,
 #ent-preferences select option:checked {
     background-color: #BFA084;
     border: 2px solid #774E45;
+    font-size: max(3.5vmin, 0.75rem)
 }
 
 select[multiple]:focus option:checked {
     background: #BFA084 linear-gradient(#BFA084, #BFA084);
 }
 
+#ent-preferences .ent-bottom button {
+    border-radius: 40px;
+    width: 60%;
+    background-color: #2D1510;
+    color: #D9D0C5;
+}
+
+#ent-save button {
+    transition: all 0.2s ease;
+}
+
+#ent-save button:hover {
+    background-color: #592E20;
+    border-color: #592E20;
+    transform: scale(1.05);
+}
+
+#ent-cover {
+    display: none;
+}
+
+#ent-cover .ent-top {
+    display: flex;
+    white-space: nowrap;
+    overflow: hidden;
+    width: 100%;
+}
+
+.coverScroll {
+    animation: cover-scroll 20s linear infinite;
+}
+
+@keyframes cover-scroll {
+    0% {
+        transform: translateX(75%);
+    }
+    50% {
+        transform: translateX(-25%);
+    }
+    50.001%{
+        transform: translateX(175%);
+    }
+    100%{
+        transform: translateX(75%);
+    }
+}
+
+.coverScroll2{
+    animation: cover-scroll2 20s linear infinite;
+}
+
+@keyframes cover-scroll2 {
+    0% {
+        transform: translateX(75%);
+    }
+    100%{
+        transform: translateX(-125%);
+    }
+}
+
+.ent-center:has(#album-img) {
+    align-content: center;
+    overflow: hidden;
+    border-radius: 15%;
+}
+
+#ent-cover .ent-bottom button {
+    width: 90%;
+    transition: all 0.2s ease;
+}
+
+#ent-cover .ent-bottom button:hover {
+    transform: scale(1.05);
+}
+
+#album-img {
+    width: 100%;
+    transition: all 0.2s ease;
+}
+
 #ent-info {
     transform: rotateY(180deg);
+}
+
+.info-title {
+    padding-bottom: 5%;
+}
+
+.info-title div {
+    font-weight: 700;
+    font-size: max(4.5vmin, 1rem) !important;
+    /* font-size: 13cqi !important; */
+}
+
+.album-name {
+    margin-top: 42%;
+}
+
+#info-wrapper {
+    padding-bottom: 5%;
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+
+#info-wrapper div {
+    width: fit-content;
+    font-size: max(3.75vmin, 1rem);
+    /* font-size: 11.25cqi; */
+    white-space: nowrap;
+    display: flex;
+}
+
+.scroll-spacing {
+    padding-right: 2rem;
+    box-sizing: border-box;
+}
+
+.scrolling {
+    animation: scroll-text 20s linear infinite;
+}
+
+@keyframes scroll-text {
+    0% {
+        transform: translateX(0%);
+    }
+    50% {
+        transform: translateX(-100%);
+    }
+    50.001%{
+        transform: translateX(100%);
+    }
+    100%{
+        transform: translateX(0%);
+    }
+}
+
+.scrolling2 {
+    animation: scroll-text2 20s linear infinite;
+}
+
+@keyframes scroll-text2 {
+    0% {
+        transform: translateX(0%);
+    }
+    100%{
+        transform: translateX(-200%);
+    }
+}
+
+#year {
+    font-size: max(3.8vmin, 1rem);
+    align-self: baseline;
+}
+
+.info-button {
+    padding: 0;
+    aspect-ratio: 1/1;
+    font-size: max(4.5vmin, 1rem) !important;
+    /* font-size: 12cqi !important; */
+    border-radius: 100px !important;
+    transition: all 0.2s ease;
+}
+
+.info-button a {
+    color: #2D1510;
+    text-decoration: none;
+}
+
+#ent-info .ent-bottom {
+    bottom: 0;
+}
+
+.info-button:hover,
+.info-button a:hover,
+#plat-button:hover {
+    transform: scale(1.08);
 }
 
 #play-button {
     background-color: #2D1510;
     color: #D9D0C5;
-    padding-left: 2%;
+    padding-left: 2.25%;
 }
 
 
@@ -462,8 +658,8 @@ select[multiple]:focus option:checked {
 #edu-date,
 #on-this-day,
 #edu-category {
-    font-size: 2.85cqi;
-    /* font-size: calc(0.5vw + 0.6em); */
+    font-size: max(2.5vmin, 0.6rem);
+    /* font-size: 2.85cqi; */
 }
 
 #on-this-day {
@@ -491,7 +687,7 @@ select[multiple]:focus option:checked {
 #edu-year {
     transition: none;
     transform: translateY(-33.3333%);
-    line-height: 1.1;
+    line-height: 1;
 }
 
 .text-scroll-wrapper {
@@ -510,7 +706,8 @@ select[multiple]:focus option:checked {
 
 #edu-year div {
     font-weight: bold;
-    font-size: 7.75cqi;
+    font-size: max(7vmin, 1.8rem);
+    /* font-size: 7.75cqi; */
 }
 
 #edu-content-section {
@@ -523,7 +720,6 @@ select[multiple]:focus option:checked {
     transform: translateY(-33.33333%);
     transition: none;
     justify-content: center;
-    /* need to add overflow responsiveness */
 }
 
 #edu-content-section div {
@@ -532,7 +728,7 @@ select[multiple]:focus option:checked {
     background: linear-gradient(to right, rgba(45, 21, 16, 1), rgba(90, 49, 32, 0.8) 100%);
     color: white;
     container-type: inline-size;
-    /* font-size: calc(0.5vw + 0.7rem); */
+    font-size: max(3.5vmin, 1rem);
     box-sizing: border-box;
     font-weight: 200;
     background-size: cover;
@@ -544,7 +740,6 @@ select[multiple]:focus option:checked {
 
 #edu-content-section div div {
     height: fit-content;
-    font-size: 8cqi;
     background: none;
     padding: 0;
 }
